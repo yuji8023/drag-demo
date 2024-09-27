@@ -32,7 +32,28 @@ import {
     VInputAttr,
 
     VTextarea,
-    VTextareaAttr
+    VTextareaAttr,
+
+    VRadio,
+    VRadioAttr,
+
+    VCheckbox,
+    VCheckboxAttr,
+
+    VSwitch,
+    VSwitchAttr,
+
+    VTag,
+    VTagAttr,
+
+    VPassword,
+    VPasswordAttr,
+
+    VRate,
+    VRateAttr,
+
+    VProgress,
+    VProgressAttr
 } from "./index";
 
 
@@ -69,7 +90,28 @@ const COMPONENT_MAP: Record<string, any> = {
     VInputAttr,
 
     VTextarea,
-    VTextareaAttr
+    VTextareaAttr,
+
+    VRadio,
+    VRadioAttr,
+
+    VCheckbox,
+    VCheckboxAttr,
+
+    VSwitch,
+    VSwitchAttr,
+
+    VTag,
+    VTagAttr,
+
+    VPassword,
+    VPasswordAttr,
+
+    VRate,
+    VRateAttr,
+
+    VProgress,
+    VProgressAttr
 };
 
 
@@ -89,6 +131,7 @@ export interface IProps {
 
 const DynamicComponent = (props: IProps) => {
     const { is } = props;
+
     // 根据传入的 is 选择组件
     const SelectedComponent = COMPONENT_MAP[is];
     // 如果组件存在，则渲染它，否则渲染 null 或者一个备用组件

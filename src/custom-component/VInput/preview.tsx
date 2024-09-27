@@ -8,7 +8,8 @@ import { IProps } from '../DynamicComponent'
 import PubSub from '../../utils/visual-drag-demo/eventBus';
 import store from '../../store/index'
 import { useProxy } from 'valtio/utils';
-import { attrObj } from './Attr'
+// import { attrObj } from './Attr'
+import {attrObj} from '../common/CommonSetter/CaptionSetter';
 
 
 export default (props: IProps) => {

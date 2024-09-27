@@ -7,8 +7,10 @@ import '@/assets/iconfont/iconfont.css'
 import '@/styles/animate.less'
 import '@/styles/reset.css'
 import '@/styles/global.less'
-import '@/styles/dark.less'
+import 'antd/lib/style/themes/default.less'
+// import '@/styles/dark.less'
 import 'antd/dist/antd.css';
+import '@/styles/modified.css'
 
 // 组件样式
 import './App.less'
@@ -32,8 +34,9 @@ import Editor from '@/components/visual-drag-demo/Editor/Index/Index';
 import DynamicComponent from '@/custom-component/DynamicComponent';
 import CanvasAttr from '@/components/visual-drag-demo/CanvasAttr/CanvasAttr';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
+import { Button, Tabs } from 'antd';
 import { rightArithShift } from 'mathjs';
+import EventList from './custom-component/common/EventList'
 
 export default () => {
   const stateRender = useSnapshot(store.state);
@@ -168,6 +171,28 @@ export default () => {
         <section className={classNames([stateRender.rightList ? 'right active' : 'right inactive'])}>
           {
             !!stateRender.curComponent ?
+              <Tabs
+                defaultActiveKey="1"
+                className='v-tabs'
+                // onChange={onChange}
+                items={[
+                  {
+                    label: '属性',
+                    key: '1',
+                    children: <DynamicComponent is={stateRender.curComponent.component + "Attr"} />,
+                  },
+                  {
+                    label: '动画',
+                    key: '2',
+                    children: `Content of Tab Pane 2`,
+                  },
+                  {
+                    label: '事件',
+                    key: '3',
+                    children: <EventList />,
+                  },
+                ]}
+              />
               // <TabPanel>
               //   <Item title="属性">
               //     <DynamicComponent is={stateRender.curComponent.component + "Attr"} />
@@ -179,7 +204,7 @@ export default () => {
               //     事件
               //   </Item>
               // </TabPanel>
-              <DynamicComponent is={stateRender.curComponent.component + "Attr"} />: 
+              : 
               <CanvasAttr />
           }
 

@@ -36,12 +36,18 @@ const SchemaField = createSchemaField({
 
 
 export const attrObj = observable({
-    value: store.state.curComponent?.propValue.caption || '',
+    // value: store.state.curComponent?.propValue.caption || '',
     dataSource: store.state.curComponent?.propValue.dataSource || [],
+    direction: store.state.curComponent?.propValue.direction,
 })
 
 export default observer(() => {
     const [modalVisible, setModalVisible] = useState(false);
+
+    useEffect(() => {
+        attrObj.dataSource = store.state.curComponent?.propValue.dataSource || [{label: '选项1'},{label: '选项2'}]
+        attrObj.direction = store.state.curComponent?.propValue.direction || 'vertical'
+    }, [])
 
     const form = useMemo(() => {
         return createForm({
@@ -61,6 +67,10 @@ export default observer(() => {
     const handleChange = (val) => {
         store.state.curComponent.propValue.dataSource =  val
         attrObj.dataSource = val
+    }
+    const handleValChange = val => {
+        store.state.curComponent.propValue.direction =  val
+        attrObj.direction = val
     }
 
     return (
@@ -84,6 +94,11 @@ export default observer(() => {
                                 obs.value = v.target.value
                             }}
                         /> */}
+                    </Form.Item>
+                    <Form.Item
+                        label='方向'
+                    >
+                        <Select value={attrObj.direction} onChange={handleValChange} options={[{label: '垂直', value: 'vertical'}, {label: '水平', value: 'horizontal'}]}></Select>
                     </Form.Item>
                 </CommonAttr>
                 

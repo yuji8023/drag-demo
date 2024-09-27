@@ -13,10 +13,10 @@ import { observer } from '@formily/reactive-react'
 import CaptionSetter from '../common/CommonSetter/CaptionSetter';
 
 
+
 export default observer(() => {
     return (
         <div className='attr-list'>
-            
                 <CommonAttr>
                     <CaptionSetter />
                 </CommonAttr>

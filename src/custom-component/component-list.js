@@ -60,6 +60,7 @@ const list = [
         propValue: {
 
         },
+        clickEventProps: {},
         icon: 'button',
         style: {
             width: 100,
@@ -119,7 +120,8 @@ const list = [
         component: 'VSelect',
         label: '下拉框',
         propValue: {
-
+            caption: '',
+            dataSource: []
         },
         icon: 'select',
         style: {
@@ -147,6 +149,165 @@ const list = [
         style: {
             width: 220,
             height: 34,
+            borderWidth: 1,
+            borderColor: '',
+            borderRadius: '',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: '',
+            color: '',
+            backgroundColor: '',
+        },
+    },
+    // {
+    //     component: 'VPassword',
+    //     label: '密码框',
+    //     propValue: {
+    //         caption: ''
+    //     },
+    //     icon: 'password',
+    //     style: {
+    //         width: 220,
+    //         height: 34,
+    //         borderWidth: 1,
+    //         borderColor: '',
+    //         borderRadius: '',
+    //         fontSize: '',
+    //         fontWeight: 400,
+    //         lineHeight: '',
+    //         letterSpacing: 0,
+    //         textAlign: '',
+    //         color: '',
+    //         backgroundColor: '',
+    //     },
+    // },
+    {
+        component: 'VCheckbox',
+        label: '复选框',
+        propValue: {
+            caption: 'Checkbox'
+        },
+        icon: 'checkbox',
+        style: {
+            width: 120,
+            height: 26,
+            borderWidth: 1,
+            borderColor: '',
+            borderRadius: '',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: '',
+            color: '',
+            backgroundColor: '',
+        },
+    },
+    {
+        component: 'VRate',
+        label: '评分',
+        propValue: {
+            caption: 'rate'
+        },
+        icon: 'rate',
+        style: {
+            width: 180,
+            height: 36,
+            borderWidth: 1,
+            borderColor: '',
+            borderRadius: '',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: '',
+            color: '',
+            backgroundColor: '',
+        },
+    },
+    {
+        component: 'VProgress',
+        label: '进度条',
+        propValue: {
+            percent: 30,
+            type: 'line'
+        },
+        icon: 'rate',
+        style: {
+            width: 180,
+            height: 36,
+            borderWidth: 1,
+            borderColor: '',
+            borderRadius: '',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: '',
+            color: '',
+            backgroundColor: '',
+        },
+    },
+    {
+        component: 'VRadio',
+        label: '单选',
+        propValue: {
+            direction: 'vertical',
+            dataSource: [{
+                label: '选项1'
+            },
+            {
+                label: '选项2'
+            }]
+        },
+        icon: 'radio',
+        style: {
+            width: 220,
+            height: 34,
+            borderWidth: 1,
+            borderColor: '',
+            borderRadius: '',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: '',
+            color: '',
+            backgroundColor: '',
+        },
+    },
+    {
+        component: 'VSwitch',
+        label: '开关',
+        propValue: {},
+        icon: 'switch',
+        style: {
+            width: 60,
+            height: 28,
+            borderWidth: 1,
+            borderColor: '',
+            borderRadius: '',
+            fontSize: '',
+            fontWeight: 400,
+            lineHeight: '',
+            letterSpacing: 0,
+            textAlign: '',
+            color: '',
+            backgroundColor: '',
+        },
+    },
+    {
+        component: 'VTag',
+        label: '标签',
+        propValue: {
+            caption: '标签'
+        },
+        icon: 'tag',
+        style: {
+            width: 66,
+            height: 26,
             borderWidth: 1,
             borderColor: '',
             borderRadius: '',
@@ -257,6 +418,21 @@ const list = [
         label: '表格',
         icon: 'biaoge',
         propValue: {
+            column: [
+                {
+                    title: '序号',
+                    dataIndex: 'index',
+                    key: 'index',
+                    textType: 'index'
+                },
+                {
+                    title: '名称',
+                    dataIndex: 'name',
+                    key: 'name',
+                    textType: 'text'
+                },
+            ],
+            dataSource: [],
             data: [
                 ['表头1', '表头2', '表头3'],
                 ['内容1', '内容2', '内容3'],
@@ -275,7 +451,7 @@ const list = [
         },
         style: {
             width: 600,
-            height: 200,
+            height: 240,
             fontSize: '',
             fontWeight: 400,
             textAlign: 'center',

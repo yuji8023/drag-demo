@@ -10,33 +10,17 @@ import store from '../../store/index'
 import { Input, Form } from 'antd';
 
 import CommonAttr from '../common/CommonAttr/CommonAttr'
+import CaptionSetter from '../common/CommonSetter/CaptionSetter';
 
 
 export default () => {
-    const stateConsumer = useProxy(store.state);
+    // const stateConsumer = useProxy(store.state);
 
     return (
         <div className='attr-list'>
-            <CommonAttr />
-            
-            <div style={{ display: 'grid', grid: "auto/1fr", gridGap: "10px 0" }}>
-            {/* <TextBox
-                    label='内容'
-                    valueChangeEvent="input"
-                    value={stateConsumer.curComponent.propValue.caption}
-                    onValueChange={v => stateConsumer.curComponent.propValue.caption = v}
-                /> */}
-             <Form.Item
-                label='内容'
-             >
-                <Input.TextArea 
-                    value={stateConsumer.curComponent.propValue.caption}
-                    onChange={e => {
-                        stateConsumer.curComponent.propValue.caption = e.target.value
-                    }}
-                />
-             </Form.Item>
-            </div>
+            <CommonAttr >
+                <CaptionSetter />
+            </CommonAttr>
         </div>
     )
 }

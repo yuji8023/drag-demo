@@ -145,7 +145,7 @@ export default (props) => {
 
     return (
         <div className='v-common-attr'>
-            <Collapse defaultActiveKey={['1']} accordion={true}>
+            <Collapse defaultActiveKey={['3']} accordion={true}>
                 <Panel header="通用样式" key="1">
                     {CustomItem(accordionItems[0])}
                 </Panel>

@@ -14,6 +14,6 @@ export default (props: IProps) => {
         !preview ? <div className={classNames('v-select-mask', className)} id={id} style={style} onClick={(e) => e.stopPropagation()}>
             <Select className={classNames('v-select')} placeholder="请选择"  ></Select>
         </div> :
-        <Select className={classNames('v-select')} placeholder="请选择" style={style} options={[{ label: '1', value: 1}]} ></Select>
+        <Select className={classNames('v-select')} placeholder="请选择" style={style} options={propValue.dataSource || []} ></Select>
     )
 }
